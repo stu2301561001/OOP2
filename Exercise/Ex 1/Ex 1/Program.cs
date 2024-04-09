@@ -36,15 +36,49 @@
 
             //           }
 
+            //Здадача 3
+            //       Console.WriteLine("Enter array");
+            //       string[] input = Console.ReadLine().Split(",");
+            //        decimal result = 0;
+            //        for(int i = 0; i < input.Length; i++)
+            //        {
+            //            result += Decimal.Parse(input[i]);
+            //        }
+            //         Console.WriteLine( "The sum is " + result);
+            //Задача 4 
+            Console.WriteLine("enter euro array");
+            var euroInput = Console.ReadLine().Split(",");
 
-            Console.WriteLine("Enter array");
-            string[] input = Console.ReadLine().Split(",");
-            decimal result = 0;
-            for(int i = 0; i < input.Length; i++)
+            Console.WriteLine("enter usd array");
+            var usdInput = Console.ReadLine().Split(",");
+
+            var euroToLv = new decimal[euroInput.Length];
+            var usdToLv = new decimal[usdInput.Length];
+             for(int i = 0; i < euroInput.Length; i++)
             {
-                result += Decimal.Parse(input[i]);
+                euroToLv[i]= Decimal.Parse(euroInput[i]) * 1.95m;
             }
-            Console.WriteLine( "The sum is " + result);
+             for(int i = 0; i < usdInput.Length; i++)
+            {
+                usdToLv[i] = Decimal.Parse(usdInput[i]) * 1.8m;
+            }
+            var areEqual = true;
+            if(euroToLv.Length == usdToLv.Length)
+            {
+                for (int i = 0;i < euroToLv.Length; i++)
+                {
+                    if (euroToLv[i] != usdToLv[i])
+                    {
+                        areEqual = false;
+                        break;
+                    }
+                
+                else
+                    
+                areEqual=false;
+                }
+                Console.WriteLine( "Equal: " + areEqual);
+            }
         }
     }
 } 
