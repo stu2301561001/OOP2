@@ -15,27 +15,36 @@
             //      }
             //      Console.WriteLine("Сумата на всички цели числа от 1 до {0} e: {1}" , N, sum);
             //Задача 2
-            Console.WriteLine("Enter number");
-            var number = int.Parse(Console.ReadLine());
-            var isPrime = true;
-            for (int i = 2; i <= Math.Sqrt(number); i++)
+            //          Console.WriteLine("Enter number");
+            //           var number = int.Parse(Console.ReadLine());
+            //           var isPrime = true;
+            //          for (int i = 2; i <= Math.Sqrt(number); i++)
+            //          {
+            //              if (number % i == 0)
+            //              {
+            //                  isPrime = false;
+            //                  break;
+            //               }
+            //
+            //               if (isPrime)
+            //
+            //                   Console.WriteLine("true");
+
+            //                else
+
+            //                   Console.WriteLine("false");
+
+            //           }
+
+
+            Console.WriteLine("Enter array");
+            string[] input = Console.ReadLine().Split(",");
+            decimal result = 0;
+            for(int i = 0; i < input.Length; i++)
             {
-                if (number % i == 0)
-                {
-                    isPrime = false; break;
-                
-
-                if (isPrime)
-
-                    Console.WriteLine("true");
-
-                else
-
-                    Console.WriteLine("false");
-                }
+                result += Decimal.Parse(input[i]);
             }
-
-
+            Console.WriteLine( "The sum is " + result);
         }
     }
 } 
